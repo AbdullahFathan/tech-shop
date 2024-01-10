@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:get/get.dart';
+import 'package:tech_shop/config/routes/routes_name.dart';
+import 'package:tech_shop/config/routes/routes_page.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
   runApp(const MainApp());
 }
 
@@ -9,12 +14,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return GetMaterialApp(
+      theme: ThemeData(
+        fontFamily: "Roboto",
       ),
+      initialRoute: RoutesName.login,
+      getPages: AppRoute.pages,
     );
   }
 }

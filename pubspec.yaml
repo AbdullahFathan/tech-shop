@@ -8,13 +8,12 @@ environment:
 
 dependencies:
   dio: ^5.4.0
-  firebase_auth: ^4.16.0
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.1.0
   flutter_secure_storage: ^9.0.0
+  flutter_svg: ^2.0.9
   get: ^4.6.6
-  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -23,3 +22,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - .env
+    - assets/images/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
