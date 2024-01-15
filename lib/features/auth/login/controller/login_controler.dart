@@ -11,7 +11,7 @@ class LoginController extends GetxController {
   void loginEvent() {
     //cek apakah data yang sudah dimasukan valid
     if (formKey.value.currentState!.validate()) {
-      Get.offAllNamed(RoutesName.homePage);
+      Get.offAllNamed(RoutesName.appNavBar);
     }
   }
 

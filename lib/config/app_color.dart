@@ -5,4 +5,5 @@ abstract class AppColor {
   static const blueColor = Color.fromARGB(193, 64, 195, 255);
   static const blackColor = Colors.black;
   static const whiteColor = Colors.white;
+  static Color greyColor = Colors.grey.withOpacity(0.4);
 }

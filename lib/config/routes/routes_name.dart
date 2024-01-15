@@ -4,6 +4,6 @@ abstract class RoutesName {
   static const register = "/RegisterPage";
   static const forgotPassword = "/ForgotPassowrdPage";
 
-  //Home Page
-  static const homePage = "/HomePage";
+  //app Screen
+  static const appNavBar = "/mainScreen";
 }
