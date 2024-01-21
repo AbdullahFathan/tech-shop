@@ -1,15 +1,54 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class MyCarousel extends StatefulWidget {
-  const MyCarousel({super.key});
+  final List<Widget> items;
+  final bool autoPlay;
+  const MyCarousel({
+    Key? key,
+    required this.items,
+    this.autoPlay = false,
+  }) : super(key: key);
 
   @override
   State<MyCarousel> createState() => _MyCarouselState();
 }
 
 class _MyCarouselState extends State<MyCarousel> {
-  final List<String> items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+  late PageController _pageController;
+  late Timer _timer;
   int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentPage);
+
+    if (widget.autoPlay) {
+      _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
+        if (_currentPage < widget.items.length - 1) {
+          _currentPage++;
+        } else {
+          _currentPage = 0;
+        }
+        _pageController.animateToPage(
+          _currentPage,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      });
+    } else {
+      _timer = Timer(const Duration(seconds: 0), () {});
+    }
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    _timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +56,10 @@ class _MyCarouselState extends State<MyCarousel> {
       children: [
         Expanded(
           child: PageView.builder(
-            itemCount: items.length,
+            controller: _pageController,
+            itemCount: widget.items.length,
             itemBuilder: (context, index) {
-              return buildCarouselItem(items[index]);
+              return (widget.items[index]);
             },
             onPageChanged: (index) {
               setState(() {
@@ -28,38 +68,48 @@ class _MyCarouselState extends State<MyCarousel> {
             },
           ),
         ),
-        buildDotIndicator(),
+        DotIndicator(
+          len: widget.items.length,
+          curentPage: _currentPage,
+        ),
       ],
     );
   }
+}
 
-  Widget buildCarouselItem(String item) {
-    return Card(
-      color: Colors.blue,
-      margin: const EdgeInsets.symmetric(horizontal: 60),
-      child: Center(
-        child: Text(
-          item,
-          style: const TextStyle(fontSize: 20.0, color: Colors.white),
-        ),
-      ),
-    );
-  }
+//build dot incator page carousel
+class DotIndicator extends StatelessWidget {
+  final int len;
+  final int curentPage;
+  final double size;
+  final double marginTop;
+  final Color activeColor;
+  final Color normalColor;
+  const DotIndicator({
+    Key? key,
+    required this.len,
+    required this.curentPage,
+    this.size = 10,
+    this.marginTop = 10,
+    this.activeColor = Colors.blue,
+    this.normalColor = Colors.grey,
+  }) : super(key: key);
 
-  Widget buildDotIndicator() {
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(items.length, (index) {
+      children: List.generate(len, (index) {
         return Container(
-          width: 10.0,
-          height: 10.0,
-          margin: const EdgeInsets.symmetric(
+          width: size,
+          height: size,
+          margin: EdgeInsets.symmetric(
             horizontal: 5.0,
-            vertical: 10,
+            vertical: marginTop,
           ),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: _currentPage == index ? Colors.blue : Colors.grey,
+            color: curentPage == index ? activeColor : normalColor,
           ),
         );
       }),

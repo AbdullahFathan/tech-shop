@@ -6,4 +6,7 @@ abstract class RoutesName {
 
   //app Screen
   static const appNavBar = "/mainScreen";
+
+  // Homepage / Shop
+  static const detailProduct = "/DetailProductPage";
 }

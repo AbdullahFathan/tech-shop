@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: RoutesName.login,
+      initialRoute: RoutesName.appNavBar,
       getPages: AppRoute.pages,
     );
   }
