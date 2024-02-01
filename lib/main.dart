@@ -5,6 +5,7 @@ import 'package:tech_shop/config/routes/routes_name.dart';
 import 'package:tech_shop/config/routes/routes_page.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
   runApp(const MainApp());
 }
