@@ -9,4 +9,10 @@ abstract class RoutesName {
 
   // Homepage / Shop
   static const detailProduct = "/DetailProductPage";
+
+  // Homepage / Cart
+  static const cartPage = "/CartPage";
+
+  //HomePage / Liked Product
+  static const likedProduct = "/LikedProductPage";
 }

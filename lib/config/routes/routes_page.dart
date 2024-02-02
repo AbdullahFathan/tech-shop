@@ -7,7 +7,10 @@ import 'package:tech_shop/features/auth/login/controller/login_binding.dart';
 import 'package:tech_shop/features/auth/login/view/login_page.dart';
 import 'package:tech_shop/features/auth/register/controller/register_binding.dart';
 import 'package:tech_shop/features/auth/register/view/register_page.dart';
+import 'package:tech_shop/features/cart/controller/cart_binding.dart';
+import 'package:tech_shop/features/cart/views/pages/cart_page.dart';
 import 'package:tech_shop/features/home/views/pages/detail_product/detail_product_page.dart';
+import 'package:tech_shop/features/liked_product/views/liked_product_page.dart';
 
 class AppRoute {
   static final pages = [
@@ -33,6 +36,15 @@ class AppRoute {
     GetPage(
       name: RoutesName.detailProduct,
       page: () => const DetailProductPage(),
+    ),
+    GetPage(
+      name: RoutesName.cartPage,
+      page: () => const CartPage(),
+      binding: CartBinding(),
+    ),
+    GetPage(
+      name: RoutesName.likedProduct,
+      page: () => const LikedProductPage(),
     ),
   ];
 }

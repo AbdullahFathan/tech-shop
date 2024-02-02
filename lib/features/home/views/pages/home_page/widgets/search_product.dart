@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tech_shop/config/app_color.dart';
+import 'package:tech_shop/config/routes/routes_name.dart';
 
 class SearchProduct extends StatelessWidget {
   const SearchProduct({super.key});
@@ -34,17 +36,17 @@ class SearchProduct extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => Get.toNamed(RoutesName.cartPage),
                   icon: const Icon(
                     Icons.shopping_cart_outlined,
-                    color: AppColor.blueColor,
+                    color: AppColor.purpleColor,
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => Get.toNamed(RoutesName.likedProduct),
                   icon: const Icon(
                     Icons.favorite_outline,
-                    color: AppColor.blueColor,
+                    color: AppColor.purpleColor,
                   ),
                 ),
               ],
