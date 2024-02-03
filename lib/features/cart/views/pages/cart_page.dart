@@ -28,11 +28,11 @@ class CartPage extends GetView<CartController> {
                 horizontal: 5,
               ),
               itemBuilder: (context, index) {
-                return Obx(() => CartItemWidget(
-                      item: controller.dummyDataCart[index],
-                      index: index,
-                      controller: controller,
-                    ));
+                return CartItemWidget(
+                  item: controller.dummyDataCart[index],
+                  controller: controller,
+                  index: index,
+                );
               },
             ),
           ),

@@ -18,10 +18,27 @@ class CartController extends GetxController {
   //total price in cart
   var totalPrice = 0.obs;
 
+  //handle checkbox cart item
   void changeCheck(int id) {
     var selectedItem = dummyDataCart.firstWhere((element) => element.id == id);
+
+    if (selectedItem.isChek) {
+      //user want to [REMOVE] item, so reduce total price
+      totalPrice.value -= int.parse(selectedItem.price);
+    } else {
+      //user want to [ADD] item, so add total price
+      totalPrice.value += int.parse(selectedItem.price);
+    }
+
+    //update isCheck item cart
     selectedItem.isChek = !selectedItem.isChek;
-    totalPrice.value += int.parse(selectedItem.price);
-    update();
+
+    dummyDataCart.refresh();
+  }
+
+  //handle remove item from cart list
+  void removeItem(Cart item) {
+    dummyDataCart.remove(item);
+    dummyDataCart.refresh();
   }
 }
