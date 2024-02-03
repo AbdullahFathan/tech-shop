@@ -11,7 +11,7 @@ class CartController extends GetxController {
               "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/1/20/5b6654a2-4317-44ba-90f7-6333fa0f7bda.jpg.webp?ect=4g",
               "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/1/20/5b6654a2-4317-44ba-90f7-6333fa0f7bda.jpg.webp?ect=4g"
             ],
-            "price": "Rp 12.000.000",
+            "price": "12000000",
             "isChek": false
           })).obs;
 
@@ -19,8 +19,9 @@ class CartController extends GetxController {
   var totalPrice = 0.obs;
 
   void changeCheck(int id) {
-    var selectedItem =
-        dummyDataCart.value.firstWhere((element) => element.id == id);
+    var selectedItem = dummyDataCart.firstWhere((element) => element.id == id);
     selectedItem.isChek = !selectedItem.isChek;
+    totalPrice.value += int.parse(selectedItem.price);
+    update();
   }
 }

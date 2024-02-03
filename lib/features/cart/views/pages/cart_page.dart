@@ -7,6 +7,7 @@ import 'package:tech_shop/features/cart/views/widgets/cart_item_widget.dart';
 
 import 'package:tech_shop/global_widgets/appbar.dart';
 import 'package:tech_shop/global_widgets/button.dart';
+import 'package:tech_shop/utils/price_helper.dart';
 
 class CartPage extends GetView<CartController> {
   const CartPage({super.key});
@@ -27,14 +28,16 @@ class CartPage extends GetView<CartController> {
                 horizontal: 5,
               ),
               itemBuilder: (context, index) {
-                return CartItemWidget(
-                  item: controller.dummyDataCart[index],
-                  index: index,
-                  controller: controller,
-                );
+                return Obx(() => CartItemWidget(
+                      item: controller.dummyDataCart[index],
+                      index: index,
+                      controller: controller,
+                    ));
               },
             ),
           ),
+
+          // Total price & buy button
           Container(
             height: 70,
             width: double.infinity,
@@ -57,10 +60,10 @@ class CartPage extends GetView<CartController> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  'Total:  Rp ${controller.totalPrice}',
-                  style: medium(AppColor.blackColor, 16),
-                ),
+                Obx(() => Text(
+                      'Total:  ${PriceHelper.formatPrice(controller.totalPrice.value.toString())}',
+                      style: medium(AppColor.blackColor, 16),
+                    )),
                 ButtonWidget(
                   textButton: "Buy",
                   buttonColor: AppColor.purpleColor,
