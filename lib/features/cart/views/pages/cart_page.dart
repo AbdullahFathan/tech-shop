@@ -57,19 +57,9 @@ class CartPage extends GetView<CartController> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Total:  ',
-                        style: medium(AppColor.blackColor, 16),
-                      ),
-                      TextSpan(
-                        text: 'Rp 12.000.000',
-                        style: medium(AppColor.blackColor, 16),
-                      ),
-                    ],
-                  ),
+                Text(
+                  'Total:  Rp ${controller.totalPrice}',
+                  style: medium(AppColor.blackColor, 16),
                 ),
                 ButtonWidget(
                   textButton: "Buy",

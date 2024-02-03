@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
@@ -47,18 +46,18 @@ class CartItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           //Checkbox to add item to list buy user
-          Obx(() => Transform.scale(
-                scale: 1.5,
-                child: Checkbox(
-                  activeColor: AppColor.purpleColor,
-                  value: controller.dummyDataCart[index].isChek,
-                  onChanged: (_) {
-                    controller.changeCheck(
-                      controller.dummyDataCart[index].id,
-                    );
-                  },
-                ),
-              )),
+          Transform.scale(
+            scale: 1.5,
+            child: Checkbox(
+              activeColor: AppColor.purpleColor,
+              value: controller.dummyDataCart[index].isChek,
+              onChanged: (_) {
+                controller.changeCheck(
+                  controller.dummyDataCart[index].id,
+                );
+              },
+            ),
+          ),
           Expanded(
             child: Row(
               children: [

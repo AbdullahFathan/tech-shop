@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:tech_shop/features/cart/models/cart_model.dart';
 
 class CartController extends GetxController {
-  List<Cart> dummyDataCart = List.generate(
+  var dummyDataCart = List.generate(
       4,
       (index) => Cart.fromJson({
             "id": index,
@@ -15,8 +15,12 @@ class CartController extends GetxController {
             "isChek": false
           })).obs;
 
+  //total price in cart
+  var totalPrice = 0.obs;
+
   void changeCheck(int id) {
-    dummyDataCart[id].isChek = !dummyDataCart[id].isChek;
-    update();
+    var selectedItem =
+        dummyDataCart.value.firstWhere((element) => element.id == id);
+    selectedItem.isChek = !selectedItem.isChek;
   }
 }
