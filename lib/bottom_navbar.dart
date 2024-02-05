@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/features/account/views/account_page.dart';
 import 'package:tech_shop/features/home/views/pages/home_page/home_page.dart';
-import 'package:tech_shop/features/news/news_page.dart';
+import 'package:tech_shop/features/news/views/pages/news_page.dart';
 
 class AppNavBar extends StatefulWidget {
   const AppNavBar({super.key});
@@ -36,7 +36,7 @@ class _AppNavBarState extends State<AppNavBar> {
             icon: _index == 0
                 ? const Icon(
                     Icons.home,
-                    color: AppColor.blueColor,
+                    color: AppColor.purpleColor,
                   )
                 : Icon(
                     Icons.home_outlined,
@@ -48,7 +48,7 @@ class _AppNavBarState extends State<AppNavBar> {
             icon: _index == 1
                 ? const Icon(
                     Icons.newspaper,
-                    color: AppColor.blueColor,
+                    color: AppColor.purpleColor,
                   )
                 : Icon(
                     Icons.newspaper_outlined,
@@ -60,7 +60,7 @@ class _AppNavBarState extends State<AppNavBar> {
             icon: _index == 2
                 ? const Icon(
                     Icons.account_circle,
-                    color: AppColor.blueColor,
+                    color: AppColor.purpleColor,
                   )
                 : Icon(
                     Icons.account_circle_outlined,
