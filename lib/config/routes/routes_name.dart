@@ -15,4 +15,7 @@ abstract class RoutesName {
 
   //HomePage / Liked Product
   static const likedProduct = "/LikedProductPage";
+
+  //News / Detail News
+  static const detailNews = "/DetailNewsPage";
 }

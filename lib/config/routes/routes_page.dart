@@ -11,6 +11,7 @@ import 'package:tech_shop/features/cart/controller/cart_binding.dart';
 import 'package:tech_shop/features/cart/views/pages/cart_page.dart';
 import 'package:tech_shop/features/home/views/pages/detail_product/detail_product_page.dart';
 import 'package:tech_shop/features/liked_product/views/liked_product_page.dart';
+import 'package:tech_shop/features/news/views/pages/detail_news_page.dart';
 
 class AppRoute {
   static final pages = [
@@ -45,6 +46,12 @@ class AppRoute {
     GetPage(
       name: RoutesName.likedProduct,
       page: () => const LikedProductPage(),
+    ),
+    GetPage(
+      name: RoutesName.detailNews,
+      page: () => DetailNewsPage(
+        item: Get.arguments,
+      ),
     ),
   ];
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
+import 'package:tech_shop/config/routes/routes_name.dart';
+import 'package:tech_shop/features/news/models/detail_news_model.dart';
 
 import 'package:tech_shop/features/news/models/news_model.dart';
 
@@ -15,7 +18,10 @@ class KNewsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //TODO: Navigasi ke detail news
+        Get.toNamed(
+          RoutesName.detailNews,
+          arguments: dummyDetailNews,
+        );
       },
       child: Container(
         height: 160,
