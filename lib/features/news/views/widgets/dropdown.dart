@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:tech_shop/config/app_color.dart';
+import 'package:tech_shop/features/news/controller/news/news_controller.dart';
 
-class KDropDownWidget extends StatefulWidget {
-  const KDropDownWidget({super.key});
-
-  @override
-  State<KDropDownWidget> createState() => _KDropDownWidgetState();
-}
-
-class _KDropDownWidgetState extends State<KDropDownWidget> {
-  String selectedValue = 'News';
-  List<String> category = ["News", "Setup", "Review", "Tips"];
+class KDropDownWidget extends GetView<NewsController> {
+  const KDropDownWidget({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<String>(
-        value: selectedValue,
+    List<String> category = ["News", "Setup", "Review", "Tips"];
+    return Obx(
+      () => DropdownButtonFormField<String>(
+        value: controller.selectedDrop.value,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: AppColor.greyColor, width: 1),
@@ -30,15 +29,15 @@ class _KDropDownWidgetState extends State<KDropDownWidget> {
         ),
         dropdownColor: AppColor.lightWhite,
         onChanged: (String? newValue) {
-          setState(() {
-            selectedValue = newValue!;
-          });
+          controller.handleDropDown(newValue!);
         },
         items: category
             .map((item) => DropdownMenuItem<String>(
                   value: item,
                   child: Text(item),
                 ))
-            .toList());
+            .toList(),
+      ),
+    );
   }
 }
