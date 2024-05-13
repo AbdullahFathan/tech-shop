@@ -7,6 +7,7 @@ import 'package:tech_shop/features/news/views/widgets/dropdown.dart';
 import 'package:tech_shop/features/news/views/widgets/news_card.dart';
 import 'package:tech_shop/global_widgets/appbar.dart';
 import 'package:tech_shop/global_widgets/shimmer_loading.dart';
+import 'package:tech_shop/global_widgets/state_helper.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({Key? key}) : super(key: key);
@@ -34,12 +35,12 @@ class NewsPage extends StatelessWidget {
       appBar: const CustomAppBar(text: "News Page"),
       body: SafeArea(
         child: RefreshIndicator(
-          onRefresh: () async {
-            await Future.delayed(const Duration(seconds: 2));
-          },
-          child: Obx(() {
-            if (controller.status.value == STATUS.loading) {
-              return ListView.builder(
+          onRefresh: () => controller.refershPage(),
+          child: Obx(() => StateHelperWidget(
+              isLoading: controller.isLoading,
+              isEmpty: controller.isEmpty,
+              isEror: controller.isEror,
+              loadingWidget: ListView.builder(
                 itemCount: 8,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
@@ -51,41 +52,39 @@ class NewsPage extends StatelessWidget {
                     witdh: double.infinity,
                   ),
                 ),
-              );
-            }
-            return ListView(
-              controller: scrollController,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 10,
               ),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 5,
-                    bottom: 18,
-                  ),
-                  child: Text(
-                    "Temukan Berita Teknologi",
-                    style: bold(AppColor.blackColor, 18),
-                  ),
+              body: ListView(
+                controller: scrollController,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 10,
                 ),
-                //Dropdown category news
-                const KDropDownWidget(),
-                const SizedBox(height: 30),
-                ListView.builder(
-                  itemCount: controller.listNews.length,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return KNewsCard(
-                      item: controller.listNews[index],
-                    );
-                  },
-                ),
-              ],
-            );
-          }),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 5,
+                      bottom: 18,
+                    ),
+                    child: Text(
+                      "Temukan Berita Teknologi",
+                      style: bold(AppColor.blackColor, 18),
+                    ),
+                  ),
+                  //Dropdown category news
+                  const KDropDownWidget(),
+                  const SizedBox(height: 30),
+                  ListView.builder(
+                    itemCount: controller.dataResult?.length ?? 0,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return KNewsCard(
+                        item: controller.dataResult?[index],
+                      );
+                    },
+                  ),
+                ],
+              ))),
         ),
       ),
       floatingActionButton: Obx(

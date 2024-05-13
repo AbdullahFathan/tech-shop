@@ -8,10 +8,10 @@ import 'package:tech_shop/features/news/models/detail_news_model.dart';
 import 'package:tech_shop/features/news/models/news_model.dart';
 
 class KNewsCard extends StatelessWidget {
-  final NewsModel item;
+  final NewsModel? item;
   const KNewsCard({
     Key? key,
-    required this.item,
+    this.item,
   }) : super(key: key);
 
   @override
@@ -51,7 +51,7 @@ class KNewsCard extends StatelessWidget {
                 height: 140,
                 width: 130,
                 child: Image.network(
-                  item.thumb,
+                  item?.thumb ?? '',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -68,7 +68,7 @@ class KNewsCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        item.title,
+                        item?.title ?? '',
                         style: medium(
                           AppColor.blackColor,
                           14,
@@ -76,7 +76,7 @@ class KNewsCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      item.time,
+                      item?.time ?? '',
                       style: medium(AppColor.greyColor, 12),
                     ),
                   ],

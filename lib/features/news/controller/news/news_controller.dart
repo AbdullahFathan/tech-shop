@@ -1,22 +1,14 @@
 import 'package:get/get.dart';
+import 'package:tech_shop/data/local/base/base_controller.dart';
+import 'package:tech_shop/features/news/models/news_model.dart';
 import 'package:tech_shop/features/news/services/news_services.dart';
 
-enum STATUS {
-  initial,
-  loading,
-  success,
-  eror,
-}
-
-class NewsController extends GetxController {
-  var status = STATUS.initial.obs;
+class NewsController extends BaseController<List<NewsModel>> {
   var showFab = false.obs;
-  var erorMsg = "".obs;
-  var listNews = [];
 
   //Send data to api
   var selectedDrop = 'News'.obs;
-  var page = 1.obs;
+  // var page = 1.obs;
 
   final NewsServices _newsServices = NewsServices();
 
@@ -30,15 +22,13 @@ class NewsController extends GetxController {
     selectedDrop.value = value;
   }
 
-  //fetch all news at first render
-  void fetchNews(bool isRefersh) async {
-    status.value = STATUS.loading;
+  Future<void> refershPage() async {
+    page(1);
+    onLoadData();
+  }
 
-    //user refersh item, so clear all data in [listNews] and [page] as 1
-    if (isRefersh) {
-      listNews.clear();
-      page.value = 1;
-    }
+  void onLoadData() async {
+    loadingState();
 
     try {
       var response = await _newsServices.fetcNews(
@@ -46,19 +36,17 @@ class NewsController extends GetxController {
         page.value,
       );
 
-      if (response.isNotEmpty) {
-        listNews.addAll(response);
-        status.value = STATUS.success;
-      }
-    } catch (eror) {
-      status.value = STATUS.eror;
-      Get.snackbar("Eror", eror.toString());
+      page.value += 1;
+
+      finishLoadData(data: response);
+    } catch (e) {
+      finishLoadData(errorMessage: e.toString());
     }
   }
 
   @override
   void onReady() {
-    fetchNews(false);
+    onLoadData();
     super.onReady();
   }
 }
