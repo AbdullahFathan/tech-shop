@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
 import 'package:tech_shop/config/routes/routes_name.dart';
-import 'package:tech_shop/features/auth/login/controller/login_controler.dart';
-import 'package:tech_shop/features/auth/widgets/email_text.dart';
-import 'package:tech_shop/features/auth/widgets/password_text.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/button.dart';
+import 'package:tech_shop/features/login/controller/login_controler.dart';
+import 'package:tech_shop/utils/global_widgets/email_text.dart';
+import 'package:tech_shop/utils/global_widgets/password_text.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/button.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});

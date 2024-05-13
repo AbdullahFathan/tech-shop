@@ -5,9 +5,9 @@ import 'package:tech_shop/config/app_fonts.dart';
 import 'package:tech_shop/features/cart/controller/cart_controller.dart';
 import 'package:tech_shop/features/cart/views/widgets/cart_item_widget.dart';
 
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/button.dart';
-import 'package:tech_shop/utils/price_helper.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/button.dart';
+import 'package:tech_shop/utils/helpers/price_helper.dart';
 
 class CartPage extends GetView<CartController> {
   const CartPage({super.key});

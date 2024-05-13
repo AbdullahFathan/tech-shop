@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:tech_shop/config/app_color.dart';
-import 'package:tech_shop/features/auth/utils/form_validartor.dart';
+import 'package:tech_shop/utils/helpers/form_validartor.dart';
 
 class PasswordTextForm extends StatefulWidget {
   final TextEditingController textEditingController;
@@ -24,8 +24,9 @@ class _PasswordTextFormState extends State<PasswordTextForm> {
       textInputAction: TextInputAction.go,
       obscureText: isObscure,
       validator: (value) {
-        if (!isStrongPassword(value!)) {
-          return "Please enter a Strong Password";
+        var msg = isStrongPassword(value!);
+        if (msg != null) {
+          return msg;
         }
         return null;
       },

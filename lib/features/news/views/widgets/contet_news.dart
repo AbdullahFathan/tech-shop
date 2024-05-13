@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
 import 'package:tech_shop/features/news/views/widgets/yt_widget.dart';
-import 'package:tech_shop/global_widgets/shimmer_loading.dart';
+import 'package:tech_shop/utils/global_widgets/shimmer_loading.dart';
 
 class ContentWidget extends StatelessWidget {
   final List<String> content;

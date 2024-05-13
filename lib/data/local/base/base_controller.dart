@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:tech_shop/utils/snackbar.dart';
+import 'package:tech_shop/utils/helpers/snackbar.dart';
 
 enum StatusState {
   initial,

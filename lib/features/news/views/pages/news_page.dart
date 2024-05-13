@@ -5,9 +5,9 @@ import 'package:tech_shop/config/app_fonts.dart';
 import 'package:tech_shop/features/news/controller/news/news_controller.dart';
 import 'package:tech_shop/features/news/views/widgets/dropdown.dart';
 import 'package:tech_shop/features/news/views/widgets/news_card.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/shimmer_loading.dart';
-import 'package:tech_shop/global_widgets/state_helper.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/shimmer_loading.dart';
+import 'package:tech_shop/utils/global_widgets/state_helper.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({Key? key}) : super(key: key);

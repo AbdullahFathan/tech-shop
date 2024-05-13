@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/product_card.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/product_card.dart';
 
 class LikedProductPage extends StatelessWidget {
   const LikedProductPage({super.key});

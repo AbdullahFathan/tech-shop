@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:tech_shop/features/auth/register/controller/register_controller.dart';
-import 'package:tech_shop/features/auth/widgets/email_text.dart';
-import 'package:tech_shop/features/auth/widgets/password_text.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/button.dart';
+import 'package:tech_shop/features/register/controller/register_controller.dart';
+import 'package:tech_shop/utils/global_widgets/email_text.dart';
+import 'package:tech_shop/utils/global_widgets/password_text.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/button.dart';
 
 class RegisterPage extends GetView<RegisterController> {
   const RegisterPage({super.key});

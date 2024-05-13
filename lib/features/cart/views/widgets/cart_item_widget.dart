@@ -6,7 +6,7 @@ import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
 import 'package:tech_shop/features/cart/controller/cart_controller.dart';
 import 'package:tech_shop/features/cart/models/cart_model.dart';
-import 'package:tech_shop/utils/price_helper.dart';
+import 'package:tech_shop/utils/helpers/price_helper.dart';
 
 class CartItemWidget extends StatelessWidget {
   final Cart item;

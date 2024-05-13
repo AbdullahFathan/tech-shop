@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
-import 'package:tech_shop/features/home/views/pages/detail_product/widgets/button_detail.dart';
-import 'package:tech_shop/features/home/views/pages/detail_product/widgets/dummy_text.dart';
-import 'package:tech_shop/features/home/views/pages/detail_product/widgets/like_button.dart';
-import 'package:tech_shop/global_widgets/carousel.dart';
+import 'package:tech_shop/features/detail_product/widgets/button_detail.dart';
+import 'package:tech_shop/features/detail_product/widgets/dummy_text.dart';
+import 'package:tech_shop/features/detail_product/widgets/like_button.dart';
+import 'package:tech_shop/utils/global_widgets/carousel.dart';
 
 class DetailProductPage extends StatelessWidget {
   const DetailProductPage({super.key});

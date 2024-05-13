@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:tech_shop/global_widgets/loading.dart';
+import 'package:tech_shop/utils/global_widgets/loading.dart';
 
 class StateHelperWidget extends StatelessWidget {
   final bool isLoading;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/features/account/views/account_page.dart';
-import 'package:tech_shop/features/home/views/pages/home_page/home_page.dart';
+import 'package:tech_shop/features/home/home_page.dart';
 import 'package:tech_shop/features/news/views/pages/news_page.dart';
 
 class AppNavBar extends StatefulWidget {

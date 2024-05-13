@@ -19,6 +19,7 @@ class ButtonWidget extends StatelessWidget {
     return MaterialButton(
       onPressed: onTap,
       color: buttonColor,
+      height: 48,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(
           12,

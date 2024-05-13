@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:tech_shop/utils/local_storange.dart';
+import 'package:tech_shop/utils/helpers/local_storange.dart';
 
 class DioHelper {
   DioHelper() {

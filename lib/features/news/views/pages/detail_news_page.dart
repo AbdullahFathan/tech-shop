@@ -4,7 +4,7 @@ import 'package:tech_shop/config/app_fonts.dart';
 
 import 'package:tech_shop/features/news/models/detail_news_model.dart';
 import 'package:tech_shop/features/news/views/widgets/contet_news.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
 
 class DetailNewsPage extends StatelessWidget {
   final DetailNewsModel item;

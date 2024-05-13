@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
-import 'package:tech_shop/features/home/views/pages/home_page/widgets/category_filter.dart';
-import 'package:tech_shop/features/home/views/pages/home_page/widgets/search_product.dart';
-import 'package:tech_shop/global_widgets/product_card.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/carousel.dart';
+import 'package:tech_shop/features/home/widgets/category_filter.dart';
+import 'package:tech_shop/features/home/widgets/search_product.dart';
+import 'package:tech_shop/utils/global_widgets/product_card.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/carousel.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

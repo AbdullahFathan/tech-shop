@@ -3,10 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tech_shop/config/app_color.dart';
 import 'package:tech_shop/config/app_fonts.dart';
-import 'package:tech_shop/features/auth/forgot_password/controller/forgot_password_controller.dart';
-import 'package:tech_shop/features/auth/widgets/email_text.dart';
-import 'package:tech_shop/global_widgets/appbar.dart';
-import 'package:tech_shop/global_widgets/button.dart';
+import 'package:tech_shop/features/forgot_password/controller/forgot_password_controller.dart';
+import 'package:tech_shop/utils/global_widgets/email_text.dart';
+import 'package:tech_shop/utils/global_widgets/appbar.dart';
+import 'package:tech_shop/utils/global_widgets/button.dart';
 
 class ForgotPasswordPage extends GetView<ForgotPasswordController> {
   const ForgotPasswordPage({super.key});

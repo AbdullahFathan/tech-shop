@@ -1,5 +1,5 @@
 import 'package:tech_shop/features/news/models/news_model.dart';
-import 'package:tech_shop/utils/dio_helper.dart';
+import 'package:tech_shop/data/remote/dio_helper.dart';
 
 class NewsServices {
   final _dio = DioHelper().dio;
