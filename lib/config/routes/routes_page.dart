@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:tech_shop/bottom_navbar.dart';
+import 'package:tech_shop/features/bottom_nav/pages/bottom_navbar.dart';
 import 'package:tech_shop/config/routes/routes_name.dart';
 import 'package:tech_shop/features/forgot_password/controller/forgot_password_binding.dart';
 import 'package:tech_shop/features/forgot_password/view/forgot_password_page.dart';
