@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:tech_shop/config/routes/routes_name.dart';
 import 'package:tech_shop/config/routes/routes_page.dart';
+import 'package:tech_shop/initialzer.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await InitializeApp.init();
+
   runApp(const MainApp());
 }
 

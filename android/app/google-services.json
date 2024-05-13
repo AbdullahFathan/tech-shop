@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "692581220195",
+    "project_id": "tech-shop-ea55a",
+    "storage_bucket": "tech-shop-ea55a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692581220195:android:a1d10f084b39532f9f1d56",
+        "android_client_info": {
+          "package_name": "com.example.tech_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNbZ1L3lL2EChmFLY03jntT9DlCWnmvBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
