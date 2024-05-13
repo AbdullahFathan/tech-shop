@@ -5,7 +5,7 @@ abstract class RoutesName {
   static const forgotPassword = "/ForgotPassowrdPage";
 
   //app Screen
-  static const appNavBar = "/mainScreen";
+  static const mainApp = "/mainScreen";
 
   // Homepage / Shop
   static const detailProduct = "/DetailProductPage";

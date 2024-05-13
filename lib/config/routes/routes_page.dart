@@ -31,7 +31,7 @@ class AppRoute {
       binding: ForgotPasswordBinding(),
     ),
     GetPage(
-      name: RoutesName.appNavBar,
+      name: RoutesName.mainApp,
       page: () => const AppNavBar(),
     ),
     GetPage(
