@@ -17,6 +17,7 @@ dependencies:
   flutter_slidable: ^3.0.1
   flutter_svg: ^2.0.9
   get: ^4.6.6
+  google_sign_in: ^6.2.1
   youtube_player_flutter: ^8.1.2
 
 dev_dependencies:

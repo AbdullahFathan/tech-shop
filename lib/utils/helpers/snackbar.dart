@@ -25,4 +25,28 @@ class SnackBarHelper {
       ),
     );
   }
+
+  static SnackbarController successSnackBar(String? text) {
+    return Get.rawSnackbar(
+      backgroundColor: Colors.green,
+      borderRadius: 8,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      margin: const EdgeInsets.all(16),
+      snackPosition: SnackPosition.TOP,
+      titleText: const Text(
+        "Success",
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      messageText: Text(
+        text ?? "Success Granted",
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+        ),
+      ),
+    );
+  }
 }

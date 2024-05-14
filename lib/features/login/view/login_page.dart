@@ -68,7 +68,7 @@ class LoginPage extends GetView<LoginController> {
                 ),
               ),
               OutlinedButton(
-                onPressed: () {},
+                onPressed: () => controller.signWithGoogle(),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
