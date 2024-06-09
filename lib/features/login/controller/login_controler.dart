@@ -12,6 +12,10 @@ class LoginController extends BaseController {
   final formKey = GlobalKey<FormState>().obs;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  //DUMMY LOGIN
+  //admin@gmail.com
+  //@Admin123
+
   // Jika user menekan login button
   void loginEvent() async {
     if (formKey.value.currentState!.validate()) {

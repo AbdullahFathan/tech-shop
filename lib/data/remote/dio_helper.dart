@@ -3,10 +3,10 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:tech_shop/data/local/local_storange.dart';
 
 class DioHelper {
-  DioHelper() {
+  DioHelper(String baseUrl) {
     _dio = Dio(
       BaseOptions(
-        baseUrl: dotenv.env['API_URL']!,
+        baseUrl: baseUrl,
       ),
     )..interceptors.addAll([DioInterceptor()]);
   }

@@ -9,6 +9,7 @@ import 'package:tech_shop/utils/global_widgets/email_text.dart';
 import 'package:tech_shop/utils/global_widgets/password_text.dart';
 import 'package:tech_shop/utils/global_widgets/appbar.dart';
 import 'package:tech_shop/utils/global_widgets/button.dart';
+import 'package:tech_shop/utils/global_widgets/state_helper.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});
@@ -21,82 +22,49 @@ class LoginPage extends GetView<LoginController> {
         minimum: const EdgeInsets.symmetric(
           horizontal: 16,
         ),
-        child: Form(
-          key: controller.formKey.value,
-          child: ListView(
-            children: [
-              SvgPicture.asset(
-                "assets/images/login.svg",
-                height: 300,
-              ),
-              EmailTextFormn(
-                textEditingController: controller.emailController.value,
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              PasswordTextForm(
-                textEditingController: controller.passwordController.value,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 13),
-                child: GestureDetector(
-                  onTap: () => Get.toNamed(RoutesName.forgotPassword),
-                  child: Text(
-                    "Forgot Password ??",
-                    textAlign: TextAlign.end,
-                    style: medium(
-                      AppColor.blackColor,
-                      14,
-                    ),
-                  ),
+        child: StateHelperWidget(
+          isEmpty: controller.isEmpty,
+          isEror: controller.isEror,
+          isLoading: controller.isLoading,
+          body: Form(
+            key: controller.formKey.value,
+            child: ListView(
+              children: [
+                SvgPicture.asset(
+                  "assets/images/login.svg",
+                  height: 300,
                 ),
-              ),
-              ButtonWidget(
-                textButton: "L O G I N",
-                onTap: () => controller.loginEvent(),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 13),
-                child: Text(
-                  "O R",
-                  textAlign: TextAlign.center,
-                  style: medium(
-                    AppColor.blackColor,
-                    14,
-                  ),
+                EmailTextFormn(
+                  textEditingController: controller.emailController.value,
                 ),
-              ),
-              OutlinedButton(
-                onPressed: () => controller.signWithGoogle(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/google.svg",
-                      height: 30,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Google Account",
+                const SizedBox(
+                  height: 16,
+                ),
+                PasswordTextForm(
+                  textEditingController: controller.passwordController.value,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 13),
+                  child: GestureDetector(
+                    onTap: () => Get.toNamed(RoutesName.forgotPassword),
+                    child: Text(
+                      "Forgot Password ??",
+                      textAlign: TextAlign.end,
                       style: medium(
                         AppColor.blackColor,
                         14,
                       ),
-                    )
-                  ],
+                    ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 35,
+                ButtonWidget(
+                  textButton: "L O G I N",
+                  onTap: () => controller.loginEvent(),
                 ),
-                child: GestureDetector(
-                  onTap: () => Get.toNamed(RoutesName.register),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 13),
                   child: Text(
-                    "Don't have Account ?? Register Now",
+                    "O R",
                     textAlign: TextAlign.center,
                     style: medium(
                       AppColor.blackColor,
@@ -104,8 +72,46 @@ class LoginPage extends GetView<LoginController> {
                     ),
                   ),
                 ),
-              ),
-            ],
+                OutlinedButton(
+                  onPressed: () => controller.signWithGoogle(),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        "assets/images/google.svg",
+                        height: 30,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Google Account",
+                        style: medium(
+                          AppColor.blackColor,
+                          14,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 35,
+                  ),
+                  child: GestureDetector(
+                    onTap: () => Get.toNamed(RoutesName.register),
+                    child: Text(
+                      "Don't have Account ?? Register Now",
+                      textAlign: TextAlign.center,
+                      style: medium(
+                        AppColor.blackColor,
+                        14,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

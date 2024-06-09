@@ -1,8 +1,9 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:tech_shop/features/news/models/news_model.dart';
 import 'package:tech_shop/data/remote/dio_helper.dart';
 
 class NewsServices {
-  final _dio = DioHelper().dio;
+  final _dio = DioHelper(dotenv.env['API_URL']!).dio;
 
   Future<List<NewsModel>> fetcNews(
     String category,
